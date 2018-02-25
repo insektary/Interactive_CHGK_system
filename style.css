@@ -1,0 +1,232 @@
+@media screen and (min-width: 1000px) {
+    .content {
+        position: relative;
+        width: 700px;
+        height: 600px;
+        top: 100px;
+        left: calc(50% - 350px);
+    }
+    .game {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        font-size: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey;
+    }
+    .hi {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey; 
+    }
+    .hi1 {
+        position: relative;
+        width: 100%;
+        height: 30px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey; 
+    }
+    .command {
+        height: 55px;
+        border-bottom: solid 1px rgb(199, 199, 199);
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey; 
+        margin-bottom: 30px;
+    }
+    input {
+        height: 50px;
+        position: relative;
+        top: 0px;
+        font-size: 24px;
+        border: 0px;
+        outline: none;
+        left: 20px;
+        padding-top: 0px;
+        color: grey;
+    }
+    p {
+        position: relative;
+        margin: 0px 0px 0px 0px;
+        top: -32px;
+        left: 20px;
+        font-family: 'Arial';
+        color: rgb(108, 108, 248);
+        display: block;
+        visibility: hidden;
+        transition: top .3s, left .3s;
+    }
+    input:focus + p {
+        top: -60px;
+        left: 10px;
+        display: block;
+        visibility: visible;
+    }
+    input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+    button {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey; 
+        background: white;
+        border: none;
+    }
+    button:last-child {
+        border-left: solid 1px grey;
+    }
+    textarea {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-position: center;
+        background-repeat: no-repeat;
+        resize: none;
+        border: solid 1px grey;
+    }
+    .answer {
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+    .counter {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: orange;
+        font-size: 36px;
+    }
+    .timer {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: orange;
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 50px;
+    }
+    .game {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey;
+    }
+    .hi {
+        position: relative;
+        width: 100%;
+        height: 270px;
+        font-size: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey; 
+    }
+    .hi1 {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        font-size: 60px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: grey; 
+    }
+    .command {
+        height: 90px;
+        border-bottom: solid 2px rgb(199, 199, 199);
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey; 
+        padding-bottom: 0px;
+        margin-bottom: 70px;
+    }
+    input {
+        height: 90px;
+        position: relative;
+        top: 0px;
+        font-size: 60px;
+        border: 0px;
+        outline: none;
+        left: 20px;
+        padding-bottom: 0px;
+        margin-bottom: 40px;
+        color: grey;
+    }
+    p {
+        position: relative;
+        margin: 0px 0px 0px 0px;
+        top: -100px;
+        left: 20px;
+        font-family: 'Arial';
+        color: rgb(108, 108, 248);
+        display: block;
+        visibility: hidden;
+        transition: top .3s, left .3s;
+        font-size: 40px;
+    }
+    input:focus + p {
+        top: -180px;
+        left: 10px;
+        display: block;
+        visibility: visible;
+    }
+    input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+    button {
+        font-size: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: grey; 
+        background: white;
+        border: none;
+    }
+    button:last-child {
+        border-left: solid 1px grey;
+    }
+    .buttons {
+        margin-bottom: 50px;
+    }
+    textarea {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+        font-size: 48px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .counter {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: orange;
+        font-size: 40px;
+    }
+    .timer {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: orange;
+        font-size: 40px;
+    }
+}

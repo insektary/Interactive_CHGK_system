@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class='content'>
+            <div class='game'>
+                <span>Интерактивная игра. Интерфейс ведущего.</span>
+            </div>
+            <div class="system">
+                <span>Вопрос номер</span>
+                <span id="number"></span>
+                <button class="control" onclick="startTimer()" disabled="disable" style="background: rgb(202, 202, 202)">Запустить таймер</button>
+                <button class="control" onclick="nextQuestion()">Следующий вопрос</button>
+            </div>
+            <div class='answers'>
+            </div>
+            <div class='final'>
+                <button class="control" id="fin" onclick="finishGame()">Завершить игру</button>
+            </div>
+        </div>
+        <div class='results'>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
