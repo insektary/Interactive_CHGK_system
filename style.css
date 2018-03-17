@@ -60,10 +60,13 @@
         font-family: 'Arial';
         color: grey;
         display: block;
-        visibility: visible;
+        visibility: hidden;
         transition: top .3s, left .3s;
         pointer-events: none;
         font-size: 24px;
+    }
+    input:focus::-webkit-input-placeholder { 
+        color:transparent; 
     }
     input:focus + p {
         top: -70px;
@@ -182,10 +185,13 @@
         font-family: 'Arial';
         color: grey;
         display: block;
-        visibility: visible;
+        visibility: hidden;
         transition: top .3s, left .3s;
         font-size: 70px;
         pointer-events: none;
+    }
+    input:focus::-webkit-input-placeholder { 
+        color:transparent; 
     }
     input:focus + p {
         top: -200px;

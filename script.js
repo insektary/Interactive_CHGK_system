@@ -55,6 +55,7 @@ function addPlayer() {
     var player = document.createElement('input');
     var contain = document.getElementsByClassName('list');
     player.type = 'text';
+    player.placeholder = 'Игрок ' + players;
     var subtext = document.createElement('p');
     subtext.innerText = 'Игрок ' + players;
     contain[0].appendChild(player);
