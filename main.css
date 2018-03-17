@@ -24,6 +24,7 @@
     border-radius: 5px;
     float: right;
     margin-left: 10px;
+    cursor: pointer;
 }
 .answers {
     width: 80%;
@@ -71,9 +72,6 @@
 .diagram {
     color: green;
     flex-shrink: 0;
-}
-.teamName {
-
 }
 .miniList {
     padding: 5px;

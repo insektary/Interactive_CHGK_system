@@ -58,19 +58,19 @@
         top: -32px;
         left: 20px;
         font-family: 'Arial';
-        color: rgb(108, 108, 248);
+        color: grey;
         display: block;
-        visibility: hidden;
+        visibility: visible;
         transition: top .3s, left .3s;
+        pointer-events: none;
+        font-size: 24px;
     }
     input:focus + p {
-        top: -60px;
+        top: -70px;
         left: 10px;
         display: block;
         visibility: visible;
-    }
-    input:focus::-webkit-input-placeholder {
-        color: transparent;
+        color: rgb(108, 108, 248);
     }
     button {
         font-size: 22px;
@@ -78,6 +78,7 @@
         color: grey; 
         background: white;
         border: none;
+        cursor: pointer;
     }
     button:last-child {
         border-left: solid 1px grey;
@@ -105,6 +106,7 @@
         font-family: Arial, Helvetica, sans-serif;
         color: orange;
         font-size: 36px;
+        font-weight: 600;
     }
     .timer {
         position: relative;
@@ -113,6 +115,7 @@
         font-family: Arial, Helvetica, sans-serif;
         color: orange;
         font-size: 40px;
+        font-weight: 600;
     }
 }
 
@@ -127,7 +130,7 @@
         position: relative;
         width: 100%;
         height: 140px;
-        font-size: 100px;
+        font-size: 10vw;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         color: grey;
@@ -136,7 +139,7 @@
         position: relative;
         width: 100%;
         height: 270px;
-        font-size: 60px;
+        font-size: 4vw;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         color: grey; 
@@ -174,23 +177,22 @@
     p {
         position: relative;
         margin: 0px 0px 0px 0px;
-        top: -100px;
+        top: -130px;
         left: 20px;
         font-family: 'Arial';
-        color: rgb(108, 108, 248);
+        color: grey;
         display: block;
-        visibility: hidden;
+        visibility: visible;
         transition: top .3s, left .3s;
-        font-size: 40px;
+        font-size: 70px;
+        pointer-events: none;
     }
     input:focus + p {
-        top: -180px;
+        top: -200px;
         left: 10px;
         display: block;
         visibility: visible;
-    }
-    input:focus::-webkit-input-placeholder {
-        color: transparent;
+        color: rgb(108, 108, 248);
     }
     button {
         font-size: 50px;
@@ -206,12 +208,11 @@
         margin-bottom: 50px;
     }
     textarea {
-        width: 100%;
+        width: 99%;
         height: 400px;
         margin-bottom: 20px;
         font-size: 48px;
-        background-position: center;
-        background-repeat: no-repeat;
+        border: solid 3px grey;
     }
     .counter {
         position: relative;
@@ -219,7 +220,8 @@
         height: 100px;
         font-family: Arial, Helvetica, sans-serif;
         color: orange;
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: 600;
     }
     .timer {
         position: relative;
@@ -227,6 +229,7 @@
         height: 50px;
         font-family: Arial, Helvetica, sans-serif;
         color: orange;
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: 600;
     }
 }

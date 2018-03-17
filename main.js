@@ -55,6 +55,7 @@ function startTimer() {
             document.getElementsByTagName('button')[1].disabled = '';
             document.getElementsByTagName('button')[0].disabled = 'disable';
             document.getElementsByClassName('timer')[0].innerText = '';
+            xhr.abort();
         }
     }, 1000);
 }
@@ -171,7 +172,9 @@ function countAll() {
                 arr.push(final[key].questions[i].time);
             }
         }
-        arr = arr.sort();
+        arr = arr.sort(function(a, b) {
+            return a - b;
+        });
         for (var key in final) {
             if (arr.indexOf(final[key].questions[i].time) === -1) {
                 final[key].questions[i].bonuce = 0;
@@ -196,7 +199,9 @@ function countAll() {
         final[key].sumOfBonuce = sumOfBonuce;
         final[key].sumOfQuestions = sumOfQuestions;
     }
-    arr = arr.sort();
+    arr = arr.sort(function(a, b) {
+        return a - b;
+    });
     arr = arr.reverse();
     for (var key in final) {
         final[key].place = arr.indexOf(final[key].sumOfBonuce) + 1;

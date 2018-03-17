@@ -1,6 +1,7 @@
 'use strict'
 var players = 1;
 var xhr = new XMLHttpRequest();
+xhr.timeout = 300000;
 var team = {};
 var questionNumber = 0;
 var myId;
@@ -54,7 +55,6 @@ function addPlayer() {
     var player = document.createElement('input');
     var contain = document.getElementsByClassName('list');
     player.type = 'text';
-    player.placeholder = 'Игрок ' + players;
     var subtext = document.createElement('p');
     subtext.innerText = 'Игрок ' + players;
     contain[0].appendChild(player);
@@ -105,21 +105,22 @@ function goToPlay () {
     form.className = 'answer';
     document.getElementsByClassName('content')[0].appendChild(form);
     var area = document.createElement('textarea');
+    area.autofocus = true;
     area.disabled = 'disabled';
     area.style.borderRadius = '5px';
-    area.style.backgroundImage = 'url("logo.svg")';
     form.appendChild(area);
     var submit = document.createElement('div');
     submit.className = 'buttons';
     document.getElementsByClassName('content')[0].appendChild(submit);
     var button = document.createElement('button');
     button.style.border = 'none';
-    button.textContent = 'Ответить';
+    button.textContent = 'Отправить ответ';
     button.onclick = sendAnswer;
     button.disabled = 'disabled';
-    button.style.visibility = 'hidden';
     button.style.position = 'relative';
     button.style.left = 'calc(50% - ' + button.width/2 + 'px';
+    button.style.border = 'solid 1px grey';
+    button.style.borderRadius = '5px';
     submit.appendChild(button);
 }
 
@@ -133,8 +134,9 @@ function wait() {
         else {
             if(xhr.responseText.indexOf('nextQuestion') !== -1) {
                 questionNumber = xhr.responseText.slice(12);
+                document.getElementsByTagName('textarea')[0].value = '';
                 document.getElementsByClassName('counter')[0].innerText = 'Вопрос № ' + questionNumber;
-                document.getElementsByTagName('button')[0].innerText = 'Ответить';
+                document.getElementsByTagName('button')[0].innerText = 'Отправить ответ';
             }
             else if (xhr.responseText === 'startTimer') {
                 timer(60);
@@ -155,6 +157,10 @@ function disableForm() {
     document.getElementsByTagName('button')[0].innerText = 'Ответ отправлен!';
 }
 
+function keyPress() {
+    if (event.keyCode === 13) sendAnswer();
+}
+
 function sendAnswer() {
     var send = myId + document.getElementsByTagName('textarea')[0].value;
     xhr.open('POST', '/answer', true);
@@ -170,9 +176,11 @@ function sendAnswer() {
 }
 
 function timer(tm) {
-    document.getElementsByTagName('textarea')[0].disabled = '';
-    document.getElementsByTagName('button')[0].disabled = '';
+    document.getElementsByTagName('button')[0].innerText = 'Отправить ответ';
     document.getElementsByTagName('button')[0].style.visibility = 'visible';
+    document.getElementsByTagName('textarea')[0].disabled = '';
+    document.getElementsByTagName('textarea')[0].focus();
+    document.getElementsByTagName('button')[0].disabled = '';
     var time = tm;
     document.getElementsByClassName('timer')[0].innerText = time;
     window.onfocus = function() {
@@ -193,7 +201,11 @@ function timer(tm) {
     }
     var timerId = setInterval(function() {
         --time;
-        document.getElementsByClassName('timer')[0].innerText = time;
+        if (time !== time) {
+            document.getElementsByClassName('timer')[0].innerText = '';
+        } else {
+            document.getElementsByClassName('timer')[0].innerText = time;
+        }
         if (time < 1) {
             window.onfocus = null;
             clearTimeout(timerId);
@@ -202,7 +214,6 @@ function timer(tm) {
             document.getElementsByTagName('button')[0].style.visibility = 'hidden';
             document.getElementsByClassName('timer')[0].innerText = '';
             document.getElementsByClassName('counter')[0].innerText = '';
-            document.getElementsByTagName('textarea')[0].value = '';
             wait();
         }
     }, 1000);
