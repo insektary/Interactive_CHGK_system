@@ -33,7 +33,9 @@ xhr.onreadystatechange = function() {
         }
         if (globalStatus.register === 'yes') {
             goToPlay();
-            wait();
+            if (globalStatus.status !== 'timerOn') {
+                wait();
+            }
         }
         if (globalStatus.status === 'ready') {
             questionNumber = globalStatus.number;

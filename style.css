@@ -74,6 +74,7 @@
         display: block;
         visibility: visible;
         color: rgb(108, 108, 248);
+        font-size: 20px;
     }
     button {
         font-size: 22px;
@@ -199,6 +200,7 @@
         display: block;
         visibility: visible;
         color: rgb(108, 108, 248);
+        font-size: 50px;
     }
     button {
         font-size: 50px;
